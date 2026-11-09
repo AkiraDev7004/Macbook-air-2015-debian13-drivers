@@ -1,0 +1,41 @@
+# Installation guide for macbook air 2015 Debian 13
+# Wrote by AkiraDev7004
+
+ Become the root user:
+
+    su -
+
+find stick and mount (OPTIONAL):
+    lsblk
+    mkdir -p /mnt/usb
+    mount /dev/sdX2 /mnt/usb   # die große Partition vom Stick, meist sdb2 oder sdc1
+    ls /mnt/usb               # hier müssen die .deb-Dateien liegen
+
+Install all packages:
+
+    cd /mnt/usb
+    dpkg -i *.deb
+    dpkg --configure -a
+
+Load drivers:
+
+    modprobe -r b43 bcma ssb
+    modprobe wl
+    ip link
+
+Now connect to your internet (Command is optional. you can also do it with the gui.)
+
+    ip link set wlp3s0 up
+    iw wlp3s0 scan | grep SSID
+    wpa_passphrase "YOUR WIFI´S NAME" "YOUR_WIFI_PASSWORD" > /etc/wpa_supplicant/wpa_supplicant.conf
+    wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    dhcpcd wlp3s0
+    ping -c 3 debian.org
+
+
+# OTHER BUGS AND FIXES:
+
+   # IF THE TOUCHPAD IS BROKEN:
+      modprobe -r usbmouse
+      modprobe -r bcm5974
+      modprobe bcm5974
