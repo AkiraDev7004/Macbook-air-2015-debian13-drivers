@@ -1,7 +1,7 @@
 # Installation guide for macbook air 2015 Debian 13
 # Wrote by AkiraDev7004
 
-1. Install the .zip file
+1. Install the .zip file on https://interhost-network.com/sites/akiradevstools/debian-drivers.zip
 
 2. Get an USB stick (Needs atleast 1GB)
 
