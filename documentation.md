@@ -16,8 +16,8 @@
 find stick and mount (OPTIONAL):
     lsblk
     mkdir -p /mnt/usb
-    mount /dev/sdX2 /mnt/usb   # die große Partition vom Stick, meist sdb2 oder sdc1
-    ls /mnt/usb               # hier müssen die .deb-Dateien liegen
+    mount /dev/sdX2 /mnt/usb
+    ls /mnt/usb
 
 Install all packages:
 
